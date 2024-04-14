@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 0.0.1
+servers:
+  - url: 'https'
+tags:
+  - name: article
+    description: article endpoint group
+  - name: user
+    description: user endpoint group
+paths:
+  /articles:
+    $ref: "./paths/articles.yaml#/articles"
+components:
+  schemas:
+    article:
+      $ref: "./components/schemas/article.yaml#/article"
+    articles:
+      $ref: "./components/schemas/article.yaml#/articles"

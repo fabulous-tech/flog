@@ -1,0 +1,30 @@
+articles:
+  get:
+    summary: Get all articles
+    operationId: getArticles
+    tags:
+      - article
+    parameters:
+      - name: limit
+        in: query
+        description: How many articles to return at one time (max 50)
+        required: false
+        schema:
+          type: integer
+          maximum: 60
+          format: int
+          default: 20
+      - name: p
+        in: query
+        description: Desired page location
+        required: false
+        schema:
+          type: integer
+          format: int
+          default: 1
+    responses:
+      '200':
+        description: A paged array of articles
+        content:
+          application/json:
+            schema: "../components/schemas/article.yaml#articles"
